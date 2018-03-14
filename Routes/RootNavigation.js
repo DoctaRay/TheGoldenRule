@@ -8,7 +8,7 @@ import Education from '../Screens/Education.js';
 
 const Header = {
   navigationOptions: {
-    title: 'Home',
+    headerTitle: 'The Golden Rule',
     headerStyle: {
       backgroundColor: '#f4511e',
     },
@@ -21,18 +21,16 @@ const Header = {
 
 const HomeStack = StackNavigator(
   {
-  Home: { screen: Journal }
+    Home: { screen: Journal }
   },
-  {
-  Header,
-  }
+    Header,
 )
 
 const EducationStack = StackNavigator(
   {
-  Education: { screen: Education }
+    Education: { screen: Education }
   },
-  Header,
+    Header,
 )
 
 
