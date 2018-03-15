@@ -1,15 +1,29 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, ScrollView } from 'react-native';
+import { List, ListItem, Text, Icon, Left, Body, Right } from 'native-base'
 
 export default class Education extends React.Component {
 
   render() {
+
+    // make lists reusable and input info into them from another component
+
     return (
-      <View>
-        <Text>Education</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
+    <ScrollView>
+      <List>
+        <ListItem icon>
+          <Left>
+            <Icon name='plane' />
+          </Left>
+          <Body>
+            <Text>Flying away</Text>
+          </Body>
+          <Right>
+            <Text> New York </Text>
+          </Right>
+        </ListItem>
+      </List>
+    </ScrollView>
     );
   }
 }

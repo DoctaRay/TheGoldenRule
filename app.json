@@ -1,6 +1,9 @@
 {
   "expo": {
     "sdkVersion": "25.0.0",
-    "icon": "./Assets/Images/Icon.png"
+    "icon": "./Assets/Images/Icon.png",
+    "splash": {
+      "image": "./Assets/Images/flower0.png",
+      "resizeMode": "cover"
   }
 }
