@@ -1,10 +1,29 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, TouchableHighlight, Button } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements'
 
 import Records from "../Components/Journal/Records.js"
+import Entry from "../Components/Journal/Entry.js"
 
 export default class Journal extends React.Component {
+
+  static navigationOptions = ({navigation}) => {
+    return {
+      headerLeft: (
+      <Button
+        onPress={() => navigation.navigate('Entry')}
+        title="Info"
+        color="#fff"
+      />
+    ),
+    }
+  }
+
+    onPress() {
+        console.log("Pressed!");
+        navigation.navigate('Entry');
+      }
 
   render() {
     var today = new Date();
@@ -28,14 +47,13 @@ export default class Journal extends React.Component {
       image: '../Images/flower.jpg'
     }
 
+
 // Use a card element which includes all the 'Entry' datae and render them in a list INSIDE the card. A card will get rendered for each entry
     return (
 <View>
     <View style={styles.entry}>
 
-            <TouchableHighlight underlayColor='white' onPress={() => {
-                  console.log("Pressed!");
-                }}>
+            <TouchableHighlight underlayColor='white' onPress={this.onPress}>
               <View>
                 <Icon name='open-book' type='entypo' size={100} color='yellow'/>
               </View>
@@ -47,7 +65,7 @@ export default class Journal extends React.Component {
 
     </View>
     );
-  }
+}
 }
 
 const styles = StyleSheet.create({
