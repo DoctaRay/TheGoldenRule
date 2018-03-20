@@ -1,8 +1,27 @@
 import React from 'react';
-import { StyleSheet, ScrollView } from 'react-native';
+import { StyleSheet, ScrollView, Button } from 'react-native';
 import { List, ListItem, Text, Icon, Left, Body, Right } from 'native-base'
 
 export default class Education extends React.Component {
+
+  static navigationOptions = ({navigation}) => {
+    return {
+      headerLeft: (
+      <Button
+        onPress={() => navigation.navigate('DrawerToggle')}
+        title="Menu"
+        color="#fff"
+      />
+    ),
+      headerRight: (
+          <Button
+            onPress={() => navigation.navigate('InfoScreen')}
+            title='Info'
+            color='#fff'
+          />
+      ),
+    }
+  }
 
   render() {
 

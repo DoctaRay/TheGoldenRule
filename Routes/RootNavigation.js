@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableHighlight, TouchableOpacity } from 'react-native';
-import { DrawerNavigator, StackNavigator } from 'react-navigation';
+import { StyleSheet, Text, View, TouchableHighlight, TouchableOpacity, Button } from 'react-native';
+import { DrawerNavigator, StackNavigator, withNavigation } from 'react-navigation';
 import { Icon } from 'native-base';
 
 import Journal from '../Screens/Journal.js';
@@ -41,24 +41,28 @@ class InfoScreen extends React.Component {
     return (
       <View>
         <Text> This is a compassionate app! </Text>
+        <Button
+          onPress={() => navigation.goBack()}
+          title='Close'
+          color='#fff'/>
       </View>
     )
   }
 }
 
 //header isn't a StackNavigator. it doesn't have any navigation props
-const Header ={
+const Header = {
   navigationOptions: {
     headerTitle: 'The Golden Rule',
     headerStyle: {
-      backgroundColor: '#f4511e',
+      backgroundColor: '#ffdf00',
     },
     headerTintColor: '#fff',
     headerTitleStyle: {
       fontWeight: 'bold',
     },
-    // headerLeft: <Menu />,
-    // headerRight: <Info />,
+     // headerLeft: <Menu />,
+     // headerRight: <Info />,
   },
 
 }
@@ -135,4 +139,4 @@ const RootNav = DrawerNavigator(
 }
 );
 
-export default RootNav;
+export default withNavigation(RootNav);

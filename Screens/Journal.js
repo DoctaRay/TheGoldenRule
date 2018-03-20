@@ -12,18 +12,25 @@ export default class Journal extends React.Component {
     return {
       headerLeft: (
       <Button
-        onPress={() => navigation.navigate('Entry')}
-        title="Info"
+        onPress={() => navigation.navigate('DrawerToggle')}
+        title="Menu"
         color="#fff"
       />
     ),
+      headerRight: (
+          <Button
+            onPress={() => navigation.navigate('InfoScreen')}
+            title='Info'
+            color='#fff'
+          />
+      ),
     }
   }
-
-    onPress() {
-        console.log("Pressed!");
-        navigation.navigate('Entry');
-      }
+  //
+  // onPress() {
+  //     console.log("Pressed!");
+  //     this.props.navigation.navigate('Entry');
+  //   }
 
   render() {
     var today = new Date();
@@ -53,7 +60,10 @@ export default class Journal extends React.Component {
 <View>
     <View style={styles.entry}>
 
-            <TouchableHighlight underlayColor='white' onPress={this.onPress}>
+            <TouchableHighlight underlayColor='white' onPress={() => {
+              console.log("Pressed!");
+              this.props.navigation.navigate('Entry');
+            }}>
               <View>
                 <Icon name='open-book' type='entypo' size={100} color='yellow'/>
               </View>
@@ -75,7 +85,7 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     borderColor: 'yellow',
     borderWidth: 5,
-    backgroundColor: 'purple'
+    backgroundColor: 'white'
 
   }
 })
