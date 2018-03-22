@@ -71,5 +71,3 @@ var EduData = [
       }
     },
 ]
-
-global.EduData = EduData;
