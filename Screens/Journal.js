@@ -19,7 +19,7 @@ export default class Journal extends React.Component {
     ),
       headerRight: (
           <Button
-            onPress={() => navigation.navigate('InfoScreen')}
+            onPress={() => navigation.navigate('Info')}
             title='Info'
             color='#fff'
           />
@@ -60,7 +60,7 @@ export default class Journal extends React.Component {
 <View>
     <View style={styles.entry}>
 
-            <TouchableHighlight underlayColor='white' onPress={() => {
+            <TouchableHighlight underlayColor='#f5f5f5' onPress={() => {
               console.log("Pressed!");
               this.props.navigation.navigate('Entry');
             }}>
